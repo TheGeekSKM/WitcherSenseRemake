@@ -8,6 +8,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField] float groundDistance = 0.4f;
     [SerializeField] LayerMask groundMask;
+    [SerializeField] WitcherSense wSense;
 
    
 
@@ -16,10 +17,12 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField] float turnSmoothTime = 0.1f;
     [SerializeField] float gravity = -9.81f;
     [SerializeField] public float jumpHeight = 3f;
+    [SerializeField] public float additionalSprintSpeed;
 
     float turnSmoothVelocity;
     Vector3 currentVelocity;
     bool isGrounded;
+    bool isSprinting;
 
 
     void Update()
@@ -35,6 +38,15 @@ public class ThirdPersonMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && wSense.witcherMode == false)
+        {
+            isSprinting = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || wSense.witcherMode == true)
+        {
+            isSprinting = false;
+        }
+
         if (direction.magnitude >= 0.1f)
         {
             //Get the angle of movement
@@ -47,7 +59,14 @@ public class ThirdPersonMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDirection.normalized * speed * Time.deltaTime);
+            if (isSprinting)
+            {
+                controller.Move(moveDirection.normalized * (speed + additionalSprintSpeed) * Time.deltaTime);
+            }
+            else
+            {
+                controller.Move(moveDirection.normalized * speed * Time.deltaTime);
+            }
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded)

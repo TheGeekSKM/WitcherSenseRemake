@@ -11,9 +11,7 @@ public class WitcherSense : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] public float witcherFOV = 31f;
-
-
-    bool witcherMode;
+    [SerializeField] public bool witcherMode;
     float originalFOV;
 
     private void Start()
