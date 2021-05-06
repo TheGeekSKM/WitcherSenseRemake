@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManagement : MonoBehaviour
 {
     [SerializeField] List<DestroyOnPress> allTheObjects = new List<DestroyOnPress>();
+    [SerializeField] TextMeshProUGUI scoreText;
 
     int numOfItemsDestroyed;
     
@@ -28,5 +30,7 @@ public class GameManagement : MonoBehaviour
                 
             }
         }
+
+        scoreText.text = numOfItemsDestroyed.ToString();
     }
 }
