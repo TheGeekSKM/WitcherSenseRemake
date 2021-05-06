@@ -1,5 +1,6 @@
 ﻿using Cinemachine;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WitcherSense : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class WitcherSense : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] public float witcherFOV = 31f;
-    [SerializeField] public float transitionTime = 4.5f;
+
 
     bool witcherMode;
     float originalFOV;
@@ -25,25 +26,28 @@ public class WitcherSense : MonoBehaviour
     void Update()
     {
         //This will check if I hold down the RMB
-        while (Input.GetMouseButton(1))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             witcherMode = true;
         }
-
-        if (!(Input.GetMouseButton(1)))
+        else if (Input.GetKeyUp(KeyCode.Mouse1))
         {
             witcherMode = false;
         }
 
         if (witcherMode)
         {
-            //cameraSettings.m_Lens.FieldOfView = witcherFOV;
-            cameraSettings.m_Lens.FieldOfView = Mathf.Lerp(cameraSettings.m_Lens.FieldOfView, witcherFOV, transitionTime * Time.deltaTime);
+            if (cameraSettings.m_Lens.FieldOfView > witcherFOV)
+            {
+                cameraSettings.m_Lens.FieldOfView -= 0.1f;
+            }
         }
         else
         {
-
-            cameraSettings.m_Lens.FieldOfView = Mathf.Lerp(cameraSettings.m_Lens.FieldOfView, originalFOV, transitionTime * Time.deltaTime);
+            if (cameraSettings.m_Lens.FieldOfView < originalFOV)
+            {
+                cameraSettings.m_Lens.FieldOfView += 0.1f;
+            }
         }
     }
 
