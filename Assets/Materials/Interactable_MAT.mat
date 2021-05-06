@@ -56,20 +56,20 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Amount: 2.53
+    - _Amount: 2.19
     - _Amplitude: 3.94
     - _Angle: 89
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _CutoutThresh: 0.2
     - _DetailNormalMapScale: 1
-    - _Distance: 0.08
+    - _Distance: -0.08
     - _DstBlend: 0
-    - _FirstOutlineWidth: 0.15
+    - _FirstOutlineWidth: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Glow: 1.18
+    - _Glow: 2.13
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -79,7 +79,7 @@ Material:
     - _SpecularHighlights: 1
     - _Speed: 2.59
     - _SrcBlend: 1
-    - _Transparency: 0.257
+    - _Transparency: 0.2
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
