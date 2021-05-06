@@ -48,7 +48,7 @@ public class WitcherSense : MonoBehaviour
         {
             if (cameraSettings.m_Lens.FieldOfView > witcherFOV)
             {
-                cameraSettings.m_Lens.FieldOfView -= 0.1f;
+                cameraSettings.m_Lens.FieldOfView -= 0.5f;
             }
 
             depthOfField.active = true;
@@ -67,7 +67,7 @@ public class WitcherSense : MonoBehaviour
         {
             if (cameraSettings.m_Lens.FieldOfView < originalFOV)
             {
-                cameraSettings.m_Lens.FieldOfView += 0.1f;
+                cameraSettings.m_Lens.FieldOfView += 0.5f;
             }
 
             depthOfField.active = false;
