@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DestroyOnPress : MonoBehaviour
@@ -7,18 +8,33 @@ public class DestroyOnPress : MonoBehaviour
     [SerializeField] DisplayTextQuest displayText;
     [SerializeField] ParticleSystem explosionParticle;
     [SerializeField] Renderer meshRender;
- 
+    [SerializeField] Collider meshCollider;
+    [SerializeField] TextMeshPro text;
+    [SerializeField] LayerMask whatIsPlayer;
+
+    public bool isDestroyed;
+
+    private void Start()
+    {
+        isDestroyed = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (displayText.playerNear == true)
+
+        if (Physics.CheckSphere(transform.position, 2f, whatIsPlayer))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && !isDestroyed )
             {
                 //particle stuffs
                 explosionParticle.Play();
                 displayText.enabled = false;
                 meshRender.enabled = false;
+                text.enabled = false;
+                meshCollider.enabled = false;
+                isDestroyed = true;
+
 
             }
         }
