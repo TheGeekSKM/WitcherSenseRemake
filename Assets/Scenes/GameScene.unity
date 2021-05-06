@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 64571271}
   - component: {fileID: 64571270}
   - component: {fileID: 64571269}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 138757616}
   - component: {fileID: 138757615}
   - component: {fileID: 138757614}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 186789721}
   - component: {fileID: 186789720}
   - component: {fileID: 186789719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundRamp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,6 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469882435}
   - component: {fileID: 469882436}
+  - component: {fileID: 469882437}
   m_Layer: 0
   m_Name: ThirdPersonCamera
   m_TagString: Untagged
@@ -627,7 +628,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -644,8 +645,8 @@ MonoBehaviour:
   m_YAxis:
     Value: 0.5
     m_SpeedMode: 0
-    m_MaxSpeed: 2
-    m_AccelTime: 0.2
+    m_MaxSpeed: 4
+    m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
@@ -668,7 +669,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 450
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -696,7 +697,7 @@ MonoBehaviour:
   m_BindingMode: 4
   m_SplineCurvature: 0.068
   m_Orbits:
-  - m_Height: 7
+  - m_Height: 10
     m_Radius: 7
   - m_Height: 5
     m_Radius: 10
@@ -707,6 +708,66 @@ MonoBehaviour:
   - {fileID: 931161420}
   - {fileID: 900683591}
   - {fileID: 1552192340}
+--- !u!114 &469882437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469882434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 256
+  m_IgnoreTag: Player
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MinimumDistanceFromTarget: 0.1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0
+  m_CameraRadius: 0.1
+  m_Strategy: 0
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0.6
+  m_DampingWhenOccluded: 0.6
+  m_OptimalTargetDistance: 0
+--- !u!1 &496828144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 496828145}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &496828145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496828144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 911210224}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &576408273
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +951,7 @@ GameObject:
   - component: {fileID: 777289936}
   - component: {fileID: 777289935}
   - component: {fileID: 777289934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -983,7 +1044,7 @@ GameObject:
   - component: {fileID: 857307573}
   - component: {fileID: 857307572}
   - component: {fileID: 857307571}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1126,7 +1187,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -1151,9 +1212,11 @@ GameObject:
   m_Component:
   - component: {fileID: 911210224}
   - component: {fileID: 911210225}
+  - component: {fileID: 911210226}
+  - component: {fileID: 911210227}
   m_Layer: 0
   m_Name: PlayerObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1166,11 +1229,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911210223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.23, y: 1.41, z: 0}
+  m_LocalPosition: {x: -8.23, y: 9.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1286455699}
   - {fileID: 469882435}
+  - {fileID: 496828145}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1188,6 +1252,41 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!143 &911210226
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911210223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.6
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &911210227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911210223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 821826871eac8e342a34b8a1ccc6fa22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 911210226}
+  cam: {fileID: 963194228}
+  speed: 6
+  turnSmoothTime: 0.1
+  gravity: -9.81
 --- !u!1 &931161418
 GameObject:
   m_ObjectHideFlags: 3
@@ -1212,7 +1311,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931161418}
-  m_LocalRotation: {x: 0.22975291, y: 0.000000018722737, z: -0.0000000044198387, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: 0.000000018722702, z: -0.00000000441983, w: 0.973249}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1250,7 +1349,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -1315,7 +1414,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 5000
   field of view: 40
   orthographic: 0
@@ -1343,7 +1442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.21201202, y: 0, z: 0, w: 0.9772671}
-  m_LocalPosition: {x: -8.23, y: 6.41, z: -10}
+  m_LocalPosition: {x: -8.23, y: 14.8, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1395,7 +1494,7 @@ GameObject:
   - component: {fileID: 976454812}
   - component: {fileID: 976454811}
   - component: {fileID: 976454810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1488,7 +1587,7 @@ GameObject:
   - component: {fileID: 1055706077}
   - component: {fileID: 1055706076}
   - component: {fileID: 1055706075}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundRamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1707,7 +1806,7 @@ GameObject:
   - component: {fileID: 1076722332}
   - component: {fileID: 1076722331}
   - component: {fileID: 1076722330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1800,7 +1899,7 @@ GameObject:
   - component: {fileID: 1134130068}
   - component: {fileID: 1134130067}
   - component: {fileID: 1134130066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1925,7 +2024,7 @@ GameObject:
   - component: {fileID: 1477718812}
   - component: {fileID: 1477718811}
   - component: {fileID: 1477718810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundRamp (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2018,7 +2117,7 @@ GameObject:
   - component: {fileID: 1522832719}
   - component: {fileID: 1522832718}
   - component: {fileID: 1522832717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2123,7 +2222,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552192338}
-  m_LocalRotation: {x: 0.19424808, y: -0.000000016878642, z: 0.0000000033423064, w: 0.98095244}
+  m_LocalRotation: {x: 0.19424808, y: 0.000000016878642, z: -0.0000000033423064, w: 0.98095244}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2161,7 +2260,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 10
-    NearClipPlane: 0.1
+    NearClipPlane: 0.01
     FarClipPlane: 5000
     Dutch: 0
     ModeOverride: 0
@@ -2188,7 +2287,7 @@ GameObject:
   - component: {fileID: 1728018167}
   - component: {fileID: 1728018166}
   - component: {fileID: 1728018165}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2281,7 +2380,7 @@ GameObject:
   - component: {fileID: 1876697311}
   - component: {fileID: 1876697310}
   - component: {fileID: 1876697309}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
