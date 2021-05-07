@@ -25,8 +25,15 @@ public class ThirdPersonMovement : MonoBehaviour
     bool isSprinting;
 
 
+   
+
     void Update()
     {
+        if (transform.position.y < 0)
+        {
+            transform.position = new Vector3(0, 45f, 0);
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && currentVelocity.y < 0)

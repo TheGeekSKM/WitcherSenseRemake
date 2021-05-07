@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagement : MonoBehaviour
 {
@@ -32,5 +33,10 @@ public class GameManagement : MonoBehaviour
         }
 
         scoreText.text = numOfItemsDestroyed.ToString();
+
+        if (numOfItemsDestroyed == allTheObjects.Count)
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 }
