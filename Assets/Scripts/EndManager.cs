@@ -17,5 +17,10 @@ public class EndManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
