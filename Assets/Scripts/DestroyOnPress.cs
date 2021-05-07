@@ -13,10 +13,12 @@ public class DestroyOnPress : MonoBehaviour
     [SerializeField] LayerMask whatIsPlayer;
 
     public bool isDestroyed;
+    AudioSource audio; 
 
     private void Start()
     {
         isDestroyed = false;
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +35,7 @@ public class DestroyOnPress : MonoBehaviour
                 meshRender.enabled = false;
                 text.enabled = false;
                 meshCollider.enabled = false;
+                audio.Play();
                 isDestroyed = true;
 
 
